@@ -17,5 +17,5 @@ def after_sales(headers, shop_id, buyer_user_id, buyer_username, email):
     json=get_payload(shop_id=shop_id, buyer_user_id=buyer_user_id, content=content)
   )
   handle_conversation(headers=headers, shop_id=shop_id, conversation_id=conversation_id, status='closed')
-  # LOG PROGRESS
-  print(f"[{config.shops[str(shop_id)]['username']}] [chat buyer] [0] - berhasil chat ke {buyer_username}")
+  # # LOG PROGRESS
+  # print(f"[{config.shops[str(shop_id)]['username']}] [chat buyer] [0] - berhasil chat ke {buyer_username}")

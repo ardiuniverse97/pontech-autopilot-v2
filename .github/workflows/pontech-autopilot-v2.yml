@@ -1,0 +1,46 @@
+name: Pontech Autopilot v2
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: pontech-autopilot-v2
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Library
+        run: pip install requests gspread
+
+      - name: Run Pontech Autopilot v2
+        run: python main.py
+        env:
+          # (1) SHOP AUTHORIZATION
+          PARTNER_ID: ${{ secrets.PARTNER_ID }}
+          PARTNER_KEY: ${{ secrets.PARTNER_KEY }}
+          REQUEST_ID: ${{ secrets.REQUEST_ID }}
+          _UID: ${{ secrets._UID }}
+          # (2) EXTERNAL APPS
+          AUTH_HEADERS_URL: ${{ secrets.AUTH_HEADERS_URL }}
+          ACCESS_TOKEN_URL: ${{ secrets.ACCESS_TOKEN_URL }}
+          SHIP_PENDING_URL: ${{ secrets.SHIP_PENDING_URL }}
+          SHIP_PENDING_KEY: ${{ secrets.SHIP_PENDING_KEY }}
+          EMAIL_SENDER_URL: ${{ secrets.EMAIL_SENDER_URL }}
+          # (3) SHOP DATASET
+          SHOPS: ${{ secrets.SHOPS }}
+          # (4) GOOGLE DATASET
+          SPREADSHEET_URL: ${{ secrets.SPREADSHEET_URL }}
+          API_GEMINI_KEY: ${{ secrets.API_GEMINI_KEY }}
+          SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}

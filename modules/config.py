@@ -16,4 +16,4 @@ shops=os.environ["SHOPS"]
 # (4) GOOGLE DATASET
 spreadsheet_url=os.environ["SPREADSHEET_URL"]
 api_gemini_key=os.environ["API_GEMINI_KEY"]
-api_google_key=os.environ["API_GOOGLE_KEY"]
+service_account_key=os.environ["SERVICE_ACCOUNT_KEY"]

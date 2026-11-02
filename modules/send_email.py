@@ -14,5 +14,5 @@ def send_email(shop_id, email, invoice, products):
       'affiliate': config.shops[shop_id]['affiliate']
     }
   )
-  # LOG PROGRESS
-  print(f"[{config.shops[shop_id]['username']}] [send email] [0] - berhasil kirim ke {email}")
+  # # LOG PROGRESS
+  # print(f"[{config.shops[shop_id]['username']}] [send email] [0] - berhasil kirim ke {email}")

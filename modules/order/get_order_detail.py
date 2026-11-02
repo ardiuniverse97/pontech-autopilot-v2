@@ -24,8 +24,8 @@ def get_order_detail(access_token, shop_id, order_sn):
     for product in item['item_list']:
       if product['model_sku'] == '': products.append(product['item_sku'])
       else: products.append(product['model_sku'])
-      # LOG PROGRESS
-      print(f"[{config.shops[shop_id]['username']}] [items list] [{len(products)}] - {products[-1]}")
+      # # LOG PROGRESS
+      # print(f"[{config.shops[shop_id]['username']}] [items list] [{len(products)}] - {products[-1]}")
     database[order_sn]={'buyer_user_id': buyer_user_id, 'buyer_username': buyer_username, 'products': products}
     if item['message_to_seller'] != '': database[order_sn]['message']=item['message_to_seller']
   return database

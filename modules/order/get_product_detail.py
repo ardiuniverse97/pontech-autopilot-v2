@@ -8,6 +8,7 @@ def get_product_detail(shop_id, products):
   worksheet=workbook.worksheet(config.shops[shop_id]['username'])
   database=[]
   for item in worksheet.get_all_values():
-    if str(item[1]) in products: name=str(item[4]); variant=str(item[5]); gdrive=str(item[6])
-    database.append([name, variant, gdrive])
+    if str(item[1]) in products:
+      name=str(item[4]); variant=str(item[5]); gdrive=str(item[6])
+      database.append([name, variant, gdrive])
   return database

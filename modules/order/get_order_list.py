@@ -23,6 +23,6 @@ def get_order_list(access_token, shop_id):
   database=[]; response=requests.get(url='https://partner.shopeemobile.com' + path, params=params).json()
   for item in response['response']['order_list']:
     order_sn=item['order_sn']; database.append(order_sn)
-    # LOG PROGRESS
-    print(f"[{config.shops[shop_id]['username']}] [order list] [{len(database)}] - {order_sn}")
+    # # LOG PROGRESS
+    # print(f"[{config.shops[shop_id]['username']}] [order list] [{len(database)}] - {order_sn}")
   return database

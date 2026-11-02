@@ -8,7 +8,7 @@ import requests
 # AFTER SALES
 def after_sales(headers, shop_id, buyer_user_id, buyer_username, email):
   if email == '': content=f'Halo Kak! 😊 Bantu info email untuk pengiriman produk digital kakak yaa. Terimakasih! 🙏'
-  elif email != '': content="Halo Kak! 😊 Terimakasih sudah belanja di toko kami. Pesanan sudah dikirimkan ya. Jika belum menerima, tolong bantu cek di folder spam/sampah kak. Terimakasih! 🙏"
+  elif email != '': content="Halo Kak! 😊 Terimakasih sudah belanja di toko kami. Pesanan sudah dikirimkan ya. Jika belum menerima, tolong bantu cek di folder spam kak. Terimakasih! 🙏"
   conversation_id=contact_buyer(headers=headers, shop_id=shop_id, buyer_user_id=buyer_user_id)
   requests.post(
     url='https://seller.shopee.co.id/webchat/api/v1.2/messages',

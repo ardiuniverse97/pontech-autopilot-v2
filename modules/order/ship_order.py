@@ -21,5 +21,5 @@ def ship_order(access_token, shop_id, order_sn):
     params=params,
     json={'order_sn': order_sn, config.shops[shop_id]['ship']: {}}
   )
-  # LOG PROGRESS
-  print(f"[{config.shops[shop_id]['username']}] [ship order] [0] - berhasil ubah status dikirim")
+  # # LOG PROGRESS
+  # print(f"[{config.shops[shop_id]['username']}] [ship order] [0] - berhasil ubah status dikirim")

@@ -3,7 +3,7 @@ import gspread
 
 # GET PRODUCT DETAIL
 def get_product_detail(shop_id, products):
-  google_api=gspread.service_account_from_dict(config.api_google_key)
+  google_api=gspread.service_account_from_dict(config.service_account_key)
   workbook=google_api.open_by_url(config.spreadsheet_url)
   worksheet=workbook.worksheet(config.shops[shop_id]['username'])
   database=[]
